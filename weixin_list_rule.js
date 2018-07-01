@@ -2,11 +2,16 @@ var fs = require('fs');
 fs.writeFile('./output/weixin_list.txt', "");
 
 function showList(list) {
+    console.log(list);
     list.list.forEach((item, key) => {
         if (item.app_msg_ext_info) {
             console.log('标题', item.app_msg_ext_info.title);
             console.log('链接', item.app_msg_ext_info.content_url);
             console.log('\n');
+            // console.log(item.app_msg_ext_info.multi_app_msg_item_list);
+            if (item.app_msg_ext_info.multi_app_msg_item_list.length > 0) {
+                console.log('多个文章', item.app_msg_ext_info.multi_app_msg_item_list.length);
+            }
             fs.appendFile('./output/weixin_list.txt', item.app_msg_ext_info.content_url + "\n", function(err) {
                 if (err) {
                     // console.log('写文件操作失败');
@@ -15,6 +20,7 @@ function showList(list) {
                 }
             });
         } else {
+            console.log(item);
         }
     });
 }
@@ -41,6 +47,7 @@ module.exports = {
                 let reg = /var msgList = '(.*)'/;
                 let res = reg.exec(responseDetail.response.body);
                 if (res) {
+                    // console.log(responseDetail.response.body + '');
                     let text = res[1].replace(/&quot;/g, '"');
                     text = text.replace(/\\\\/g, '');
                     let json = JSON.parse(text)

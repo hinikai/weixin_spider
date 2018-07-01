@@ -17,7 +17,7 @@
     npm run list_spider
 
 此时需要手动打开微信公众号查看全部历史文章的页面，并手动下拉浏览完所有的文章，此时会自动记录所有公众号历史内容在output/weixin_list.txt下。
-![进入所有文章](./asset/wangchao.jpg)
-![所有文章列表页](./asset/wangchao_list.jpeg)
-![抓取过程](./asset/spider_list.jpg)
-![抓取结果](./asset/spider_result.png)
+<img src="./asset/wangchao.jpg" alt="进入所有文章" width="200"/>
+<img src="./asset/wangchao_list.jpeg" alt="所有文章列表页"  width="200"/>
+<img src="./asset/spider_list.jpg" alt="抓取过程"  width="200"/>
+<img src="./asset/spider_result.png" alt="抓取结果"  width="200"/>
