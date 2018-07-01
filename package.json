@@ -1,0 +1,15 @@
+{
+  "name": "weixin_spider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "anyproxy --intercept",
+    "list_spider": "node weixin_list.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "anyproxy": "^4.0.10"
+  }
+}
